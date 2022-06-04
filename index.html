@@ -7,7 +7,17 @@
 
     <body class="white-text">
         <h2>I'm sorry to say, but...</h2>
-        <p>You get <b>zer</b><img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="20" height="20"> britches!</p>
+        <p>You get <b>zer</b><img id="omegalul" src="https://cdn.frankerfacez.com/emoticon/128054/4" width="20" height="20" onclick=""> britches!</p>
+
+        <script>
+            document.getElementById("omegalul").addEventListener("click", () => {
+                try {
+                    document.body.style.background = 'url("https://static.wikia.nocookie.net/jerma-lore/images/e/e3/JermaSus.jpg/revision/latest?cb=20201206225609")'
+                } catch (e) {
+                    alert(e)
+                }
+            })
+        </script>
     </body>
 
 </html>
