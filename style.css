@@ -6,4 +6,13 @@ body {
     color: white;
     text-align: center;
     font-size: 30pt;
+    font-family: "Comic Sans MS", Helvetica, Arial, sans-serif;
+}
+
+.omegalul {
+    vertical-align: middle
+}
+
+.noselect {
+    user-select: none
 }
