@@ -1,0 +1,9 @@
+body {
+    background-color: black
+}
+
+.white-text {
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+}
