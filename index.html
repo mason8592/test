@@ -6,21 +6,19 @@
     </head>
 
     <body class="white-text">
-        <img id="omegalul" class="omegalul" src="https://cdn.frankerfacez.com/emoticon/128054/4" width="400" height="400">
+        <h1 class="white-text"></h1>
+
+        <input id="input" type="text">
+
+        <button id="swag" onclick="cope()">jufus</button>
 
         <script>
-            const OMEGALUL = document.getElementById("omegalul")
+            function cope() {
+                document.getElementsByClassName("white-text")[0].innerText = document.getElementById("input").value
 
-                try {
-                    setInterval(() => {
-                        OMEGALUL.width = Math.random() * 800 + 100
-                        OMEGALUL.height = Math.random() * 800 + 100
-                    }, 1)
-
-                    OMEGALUL.src = "https://static.wikia.nocookie.net/jerma-lore/images/e/e3/JermaSus.jpg"
-                } catch (e) {
-                    alert(e)
-                }
+                let text = document.getElementsByClassName("white-text")
+                text[0].innerHTML = text[0].innerText.replace(/o/gi, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width=25 height=25>')
+            }
         </script>
     </body>
 
