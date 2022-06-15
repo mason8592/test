@@ -2,22 +2,34 @@
 <html id="omegalul2" class="noselect">
  
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
-    <body class="white-text">
-        <h1 class="white-text"></h1>
+    <body class="white-text" onload="cope()">
+        <h1 class="white-text" id="h1">Place holder</h1>
 
-        <input id="input" type="text">
-
-        <button id="swag" onclick="cope()">jufus</button>
+        <form autocomplete="off">
+            <input id="input" type="text" autofocus onsubmit="cope()">
+        </form>
 
         <script>
-            function cope() {
-                document.getElementsByClassName("white-text")[0].innerText = document.getElementById("input").value
+            document.getElementById("input").addEventListener("keydown", function (e) {
+                if (e.key === "Enter") {  
+                    cope()
+                }
+            })
 
-                let text = document.getElementsByClassName("white-text")
-                text[0].innerHTML = text[0].innerText.replace(/o/gi, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width=25 height=25>')
+            function cope() {
+                event.preventDefault()
+
+                if (document.getElementById("input").value.length > 0) {
+                    document.getElementById("h1").innerText = document.getElementById("input").value
+
+                    document.getElementById("input").value = ""
+                }
+
+                let text = document.getElementById("h1")
+                    text.innerHTML = text.innerText.replace(/o/gi, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="80" height="80">')
             }
         </script>
     </body>
