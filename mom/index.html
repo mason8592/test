@@ -1,1 +1,23 @@
-<h1>Hi mom!</h1>
+<!DOCTYPE html>
+<html>
+ 
+    <head>
+        <title>Mason's Website</title>
+    </head>
+
+    <body>
+        <h1 id="j" style="font-size: 150px; font-family: Helvetica; text-align: center" onclick="change()">Hi, mom!</h1>
+
+        <script>
+            let j = document.getElementById("j")
+
+            console.log(j)
+            let pog = true
+
+            function change() {
+                j.innerText = j.innerText.split("").reverse().join("")
+            }
+        </script>
+    </body>
+
+</html>
