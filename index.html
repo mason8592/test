@@ -31,7 +31,8 @@
                 }
 
                 let text = document.getElementById("h1")
-                    text.innerHTML = text.innerText.replace(/o/gi, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="80" height="80">')
+
+                text.innerHTML = text.innerText.replace(/o/g, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="80" height="80">').replace(/O/g, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="110" height="110">')
             }
         </script>
     </body>
