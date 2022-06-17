@@ -2,5 +2,26 @@
   "dependencies": {
     "express": "^4.18.1",
     "path": "^0.12.7"
+  },
+  "name": "masonlanedev",
+  "description": "My website.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mason8592/test.git"
+  },
+  "author": "Mason Lane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mason8592/test/issues"
+  },
+  "homepage": "https://github.com/mason8592/test#readme",
+  "engines": {
+    "node": "16.x"
   }
 }
