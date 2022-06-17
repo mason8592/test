@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ 
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Reverse - Mason Lane</title>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">        
+    </head>
+
+    <body>
+        <p class="text">
+            <i>Click to reverse text. Click and hold to edit.</i>
+        </p>
+
+        <h1 id="reverse-text" class="text main">!desrever gnieb evol I</h1>
+
+        <script>
+            let text = document.getElementById("reverse-text")
+            let timeout = false
+
+            text.addEventListener("mousedown", () => {                
+                timeout = setTimeout(() => {
+                    text.setAttribute("contenteditable", true)
+                    text.focus()
+                }, 500)
+            })
+
+            text.addEventListener("mouseup", () => {
+                if (document.activeElement !== text) {
+                    change()
+                }
+
+                clearTimeout(timeout)
+            })
+
+            text.addEventListener("mouseleave", () => {
+                text.setAttribute("contenteditable", false)
+
+                clearTimeout(timeout)
+            })
+
+            text.addEventListener("keydown", (e) => {
+                if (e.code === "Enter") {
+                    text.setAttribute("contenteditable", false)
+                }
+            })
+
+            function change() {
+                text.innerText = text.innerText.split("").reverse().join("")
+            }
+        </script>
+    </body>
+
+</html>

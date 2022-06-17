@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+}
+
+.text {
+    font-family: Helvetica;
+    text-align: center;
+    user-select: none;
+    color: white;
+}
+
+.main {
+    font-size: 100px;
+    word-wrap: break-word;
+    outline: 0px solid transparent;
+}
