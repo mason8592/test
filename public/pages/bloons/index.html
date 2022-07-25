@@ -9,8 +9,27 @@
     </head>
 
     <body class="white-text">
-        <h1>This will eventually be Bloons!</h1>
-        <h2>I will have it so that you can ask "how much money do I make from round x to round y" and it will tell you.</h2>
+        <h1>Bloons</h1>
+        <ul id="list" style="padding: 0; display: block"></ul>
     </body>
+
+    <script>
+        let rounds = {
+            1: 850,
+            2: 910,
+            3: 1055,
+            4: 1290,
+            5: 1530,
+            6: 1995,
+        }
+
+        Object.keys(rounds).forEach(key => {
+            console.log(key)
+            let element = document.createElement("ul")
+            element.style = "text-align: center"
+            element.innerText = `${key}: ${rounds[key]}`
+            document.getElementById("list").appendChild(element)
+        })
+    </script>
 
 </html>
