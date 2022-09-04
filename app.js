@@ -3,7 +3,7 @@ const app = express()
 const path = require('path');
 
 app.use(function(req, res, next) {
-    res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline'; img-src 'self' https://*; script-src 'self' 'unsafe-inline' https://apis.google.com;");
+    res.setHeader("Content-Security-Policy", "default-src https://www.masonlane.dev 'self' 'unsafe-inline'; img-src 'self' https://*; script-src 'self' 'unsafe-inline';");
     return next();
 });
 
