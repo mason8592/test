@@ -1,6 +1,9 @@
 const express = require("express")
 const app = express()
 const path = require('path');
+const favicon = require("serve-favicon")
+
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 
 app.use(function(req, res, next) {
     res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline'; img-src 'self' https://*; script-src 'self' 'unsafe-inline';");
@@ -8,11 +11,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(path.join(__dirname + "/public/pages")));
-app.use(express.static(path.join(__dirname + "/public/images")));
 app.use(express.static(path.join(__dirname + "/public")));
-
-app.get('/favicon.ico', (req, res) => res.status(204).end()); 
-app.get('/public/images/favicon.ico', (req, res) => res.status(204).end()); 
 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname+'/public/home/index.html'))
