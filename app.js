@@ -3,7 +3,7 @@ const app = express()
 const path = require('path');
 const favicon = require("serve-favicon")
 
-app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'favicon.ico')))
 
 app.use(function(req, res, next) {
     res.set({
