@@ -3,7 +3,7 @@ const app = express()
 const path = require('path');
 
 app.use(function(req, res, next) {
-    res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' 'unsafe-inline' https://apis.google.com;");
+    res.setHeader("Content-Security-Policy", "default-src 'self' https://*; script-src 'self' 'unsafe-inline' https://apis.google.com;");
     return next();
 });
 
