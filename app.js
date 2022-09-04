@@ -8,9 +8,11 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(path.join(__dirname + "/public/pages")));
+app.use(express.static(path.join(__dirname + "/public/images")));
 app.use(express.static(path.join(__dirname + "/public")));
 
 app.get('/favicon.ico', (req, res) => res.status(204).end()); 
+app.get('/public/images/favicon.ico', (req, res) => res.status(204).end()); 
 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname+'/public/home/index.html'))
