@@ -3,18 +3,10 @@ const app = express()
 const path = require('path');
 const favicon = require("serve-favicon")
 
-app.use(favicon(path.join(__dirname, 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 
 app.use(function(req, res, next) {
-    res.set({
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
-        "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
-        "Content-Security-Policy": "default-src 'self' 'unsafe-inline'; img-src 'self' https://*; script-src 'self' 'unsafe-inline';",
-        "X-Content-Security-Policy": "default-src *",
-        "X-WebKit-CSP": "default-src *"
-    })
-
+    res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline'; img-src 'self' https://*; script-src 'self' 'unsafe-inline';");
     return next();
 });
 
