@@ -6,10 +6,18 @@
         <link rel="stylesheet" type="text/css" href="settings-style.css">
         <link rel="stylesheet" type="text/css" href="../../styles/main.css">
         <title>NYANVAS</title>
-        <link rel="icon" type="image/x-icon" href="images/blueheart.png">        
+        <link rel="icon" type="image/x-icon" href="images/blueheart.png">      
+        
+        <meta content="NYANVAS" property="og:title" />
+        <meta content="draw with the wacky characters that live inside neon's mind" property="og:description" />
+        <meta content="https://www.masonlane.dev/secret" property="og:url" />
+        <meta content="images/blueheart.png" property="og:image" />
+        <meta content="#7fa2f1" data-react-helmet="true" name="theme-color" />
     </head>
 
-    <body id="body" style="position: relative">
+    
+
+    <body id="body" style="position: relative; margin: 0">
         <div id="settings" class="settings" style="display: none;">
             <div class="brush-size-setting setting">
                 <h1 class="setting-text noselect" id="sizeSliderText">brush size:</h1>
@@ -96,6 +104,8 @@
         function eraseImage(x, y) {
             const target = document.elementsFromPoint(x, y).filter(element => element.tagName.toLowerCase() === "img")[0]
 
+            if (!target) return
+
             target.remove()
 
             settleImageID(() => {
@@ -112,9 +122,12 @@
             image.draggable = false
             image.height = size * (1 / (image.naturalWidth / image.naturalHeight / 1))
             image.width = size
-            image.style = `position: absolute; left: ${x - image.width / 2}px; top: ${y - image.height / 2}px; user-select: none; z-index: -1`
+            image.style = `position: absolute; left: ${x - (image.width / 2)}px; top: ${y - (image.height / 2)}px; user-select: none; z-index: -1;`
             image.id = imageID >= 1 ? imageID : 1
             
+            console.log(image.style.left, image.style.top)
+            console.log(x, y)
+
             imageID += 1
 
             body.appendChild(image)
