@@ -125,9 +125,6 @@
             image.style = `position: absolute; left: ${x - (image.width / 2)}px; top: ${y - (image.height / 2)}px; user-select: none; z-index: -1;`
             image.id = imageID >= 1 ? imageID : 1
             
-            console.log(image.style.left, image.style.top)
-            console.log(x, y)
-
             imageID += 1
 
             body.appendChild(image)
