@@ -15,13 +15,12 @@ app.use(bodyParser.json());
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 
 app.use(function(req, res, next) {
-    if (req.url === "/unity/") {
-        res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline' blob: 'wasm-unsafe-eval'; img-src 'self' https://*;");
-    } else if (req.url === "/nyanvas/") {
+    if (req.url === "/nyanvas/") {
         res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline'; img-src 'self' https://*;");
     } else {
         res.setHeader("Content-Security-Policy", "default-src 'self'; img-src 'self' https://*;");
     }
+
     return next()
 })
 
