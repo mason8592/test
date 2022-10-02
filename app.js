@@ -15,11 +15,7 @@ app.use(bodyParser.json());
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 
 app.use(function(req, res, next) {
-    if (req.url === "/nyanvas/") {
-        res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline'; img-src 'self' https://*;");
-    } else {
-        res.setHeader("Content-Security-Policy", "default-src 'self'; img-src 'self' https://*;");
-    }
+    res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline'; img-src 'self' https://*;");
 
     return next()
 })

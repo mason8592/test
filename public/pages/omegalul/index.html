@@ -18,7 +18,7 @@
             let h1 = document.getElementById("omegalul-text")
             let params = new URLSearchParams(window.location.search)
 
-            h1.innerText = params.has("text") ? atob(params.get("text")) : "placeholder"
+            h1.innerText = params.has("text") ? params.get("text") : "placeholder"
 
             document.getElementById("input").addEventListener("keydown", function (e) {
                 if (e.key === "Enter") {  
