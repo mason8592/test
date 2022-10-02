@@ -8,13 +8,18 @@
     </head>
 
     <body class="white-text" onload="cope()">
-        <h1 class="white-text" id="h1">Place holder</h1>
+        <h1 class="white-text" id="omegalul-text"></h1>
 
         <form autocomplete="off">
             <input id="input" type="text" autofocus onsubmit="cope()">
         </form>
 
         <script>
+            let h1 = document.getElementById("omegalul-text")
+            let params = new URLSearchParams(window.location.search)
+
+            h1.innerText = params.has("text") ? atob(params.get("text")) : "placeholder"
+
             document.getElementById("input").addEventListener("keydown", function (e) {
                 if (e.key === "Enter") {  
                     cope()
@@ -25,14 +30,12 @@
                 event.preventDefault()
 
                 if (document.getElementById("input").value.length > 0) {
-                    document.getElementById("h1").innerText = document.getElementById("input").value
+                    h1.innerText = document.getElementById("input").value
 
                     document.getElementById("input").value = ""
                 }
 
-                let text = document.getElementById("h1")
-
-                text.innerHTML = text.innerText.replace(/o/g, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="50" height="50">').replace(/O/g, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="70" height="70">')
+                h1.innerHTML = h1.innerText.replace(/o/g, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="50" height="50">').replace(/O/g, '<img src="https://cdn.frankerfacez.com/emoticon/128054/4" width="70" height="70">')
             }
         </script>
     </body>
